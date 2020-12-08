@@ -68,7 +68,6 @@ def part_one(mylist):
     print(len(ibb))
 
 adding = 1
-history = []
 
 def part_two(mylist):
     bags = get_bag(mylist)
@@ -78,13 +77,11 @@ def part_two(mylist):
 def get_length(bag, bags):
     other_bags = bags[bag[1]]
     if other_bags[0] == 'No bags':
-        return 1
+        return 0
     else:
         sum_bags = 0
-        outer_addition = 0
         for other in other_bags:
             sum_bags += other[0] + (other[0] * get_length(other, bags))
-            print(sum_bags)
         return sum_bags
     
 
